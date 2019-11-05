@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Coffee shop">
+
+    <!-- features listed individually to optimize startup time -->
+    <featureManager>
+        <feature>beanValidation-2.0</feature>
+        <feature>cdi-2.0</feature>
+        <feature>ejbLite-3.2</feature>
+        <feature>jaxb-2.2</feature>
+        <feature>jaxrs-2.1</feature>
+        <feature>jaxrsClient-2.1</feature>
+        <feature>jsonb-1.0</feature>
+        <feature>jsonp-1.1</feature>
+        <feature>jpa-2.2</feature>
+        <feature>mpHealth-2.0</feature>
+    </featureManager>
+
+    <!-- Postgres coffee-shop-db definition -->
+    <dataSource id="DefaultDataSource" jdbcDriverRef="postgresql-driver"
+                jdbc="java:comp/DefaultDataSource"
+                type="javax.sql.ConnectionPoolDataSource" transactional="true">
+
+        <properties serverName="coffee-shop-db" portNumber="5432"
+                    databaseName="postgres" user="postgres" password="postgres"/>
+    </dataSource>
+
+</server>
